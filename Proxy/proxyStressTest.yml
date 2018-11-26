@@ -1,0 +1,11 @@
+config:
+  processor: './proxyStressTest.js'
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 60
+      arrivalRate: 100
+scenarios:
+  - flow:
+    - function: "generateId"
+    - get:
+        url: '/{{ id }}/reviews'
